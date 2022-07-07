@@ -3,6 +3,7 @@
   "description": "A simple component way to work with Cookies",
   "keywords": ["rafaeldms", "cookie", "component", "https", "http", "csrf", "xss", "samesite"],
   "homepage": "https://www.cagep.com.br",
+  "version": "1.0.1",
   "license": "MIT",
   "authors": [
     {

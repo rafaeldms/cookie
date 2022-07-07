@@ -48,12 +48,12 @@ Para começar a usar o Cookie pode Instanciar uma nova Classe ou utilizá-lo de 
 #### Create Cookie using static methods (criando cookies usando o método estático)
 
 ```php 
-use RafaelDms\Cookie\Cookie;
+use RafaelDms\Cookie\StaticCookie;
 
 /**
  * Create a new cookie using the static method
  */
- Cookie::setCookie::set("test", "new_test", 10);
+ StaticCookie::setCookie::set("test", "new_test", 10);
 ```
 
 #### Get Cookie using static methods (Obter Cookie usando métodos estáticos)
@@ -62,7 +62,7 @@ use RafaelDms\Cookie\Cookie;
  /**
  * get value the static method
  */
- echo Cookie::get("test");
+ echo StaticCookie::get("test");
 
  echo "<br><br>";
 ```
@@ -72,7 +72,7 @@ use RafaelDms\Cookie\Cookie;
 /**
  * Create value as array
  */
-Cookie::set('user', ['name' => 'Rafael', 'role' => "Developer"], 10);
+StaticCookie::set('user', ['name' => 'Rafael', 'role' => "Developer"], 10);
 ```
 
 #### Get Cookie using static methods (Obter Cookie usando métodos estáticos)
@@ -80,7 +80,7 @@ Cookie::set('user', ['name' => 'Rafael', 'role' => "Developer"], 10);
 /**
  * get value as array the static method
  */
-echo Cookie::get('user')['role'];
+echo StaticCookie::get('user')['role'];
 
 
 echo "<br><br>";
@@ -90,7 +90,7 @@ echo "<br><br>";
 /**
  * remove the static class
  */
-Cookie::destroy('test');
+StaticCookie::destroy('test');
 ```
 
 #### create if it doens't exist using method static (criando um cookie se não existir usando método estático)
@@ -99,7 +99,7 @@ Cookie::destroy('test');
 /**
  * create if it doesn't exist the static method
  */
-Cookie::setDoesntHave('testIfDoesntHave', true, 10000);
+StaticCookie::setDoesntHave('testIfDoesntHave', true, 10000);
 ```
 
 #### create and delete if it exists the static method (criando e deletando um cookie se existir usando método estático)
@@ -108,7 +108,7 @@ Cookie::setDoesntHave('testIfDoesntHave', true, 10000);
 /**
  * create if it doesn't exist the static method
  */
-Cookie::setDoesntHave('testIfDoesntHave', 'ok', 12500, "/admin", true);
+StaticCookie::setDoesntHave('testIfDoesntHave', 'ok', 12500, "/admin", true);
 ```
 
 #### check if exists using a static method (verificando se um cookie existe usando método estático)
@@ -116,7 +116,7 @@ Cookie::setDoesntHave('testIfDoesntHave', 'ok', 12500, "/admin", true);
 /**
  * check if exists cookie the static class
  */
-if (Cookie::has('testIfDoesntHave')) {
+if (StaticCookie::has('testIfDoesntHave')) {
     echo "Cookie testIfDoesntHave exist";
 } else {
     echo "Cookie testIfDoesntHave not exist";
@@ -131,7 +131,7 @@ echo "<br><br>";
  * check if exists by value
  */
 
-if (Cookie::has("testIfDoesntHave", 1)) {
+if (StaticCookie::has("testIfDoesntHave", 1)) {
     echo "the value is equal to ok";
 } else {
     echo "the vlaue is no equal to ok";
@@ -143,6 +143,8 @@ echo "<br><br>";
 ## Instance a new cookie object (instanciando um novo objeto cookie)
 
 ```php
+use RafaelDms\Cookie\Cookie;
+
 /**
  * Create a new cookie using construct method
  */

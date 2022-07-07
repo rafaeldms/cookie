@@ -1,8 +1,11 @@
 <?php
+
+
 require __DIR__ . "/assets/config.php";
 
 require dirname(__DIR__, 1) . "/vendor/autoload.php";
 
+use RafaelDms\Cookie\StaticCookie;
 use RafaelDms\Cookie\Cookie;
 
 /**
@@ -17,24 +20,24 @@ var_dump($_COOKIE);
 /**
  * Create a new cookie using the static method
  */
-Cookie::set("test", "new_test", 10);
+StaticCookie::set("test", "new_test", 10);
 
 /**
  * get value the static method
  */
-echo Cookie::get("test");
+echo StaticCookie::get("test");
 
 echo "<br><br>";
 
 /**
  * Create value as array the static method
  */
-Cookie::set('user', ['name' => 'Rafael', 'role' => "Developer"], 10);
+StaticCookie::set('user', ['name' => 'Rafael', 'role' => "Developer"], 10);
 
 /**
  * get value as array the static method
  */
-echo Cookie::get('user')['role'];
+echo StaticCookie::get('user')['role'];
 
 
 echo "<br><br>";
@@ -47,24 +50,24 @@ echo "<br><br>";
 /**
  * create if it doesn't exist the static method
  */
-Cookie::setDoesntHave('testIfDoesntHave', true, 10000);
+StaticCookie::setDoesntHave('testIfDoesntHave', true, 10000);
 
 /**
  * create and delete if it exists the static method
  */
-Cookie::setDoesntHave('testIfDoesntHave', 'ok', 12500, "/admin", true);
+StaticCookie::setDoesntHave('testIfDoesntHave', 'ok', 12500, "/admin", true);
 
 /**
  *  get value the static class
  */
-echo Cookie::get("testIfDoesntHave");
+echo StaticCookie::get("testIfDoesntHave");
 
 echo "<br><br>";
 
 /**
  * check if exists cookie the static class
  */
-if (Cookie::has('testIfDoesntHave')) {
+if (StaticCookie::has('testIfDoesntHave')) {
     echo "Cookie testIfDoesntHave exist";
 } else {
     echo "Cookie testIfDoesntHave not exist";
@@ -76,7 +79,7 @@ echo "<br><br>";
  * check if exists by value
  */
 
-if (Cookie::has("testIfDoesntHave", 1)) {
+if (StaticCookie::has("testIfDoesntHave", 1)) {
     echo "the value is equal to ok";
 } else {
     echo "the vlaue is no equal to ok";
