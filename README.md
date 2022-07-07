@@ -312,7 +312,7 @@ Thank you
 
 - [Rafael Damasceno Ferreira](https://github.com/rafaeldms) (Developer)
 - [Cagep Consultoria](https://github.com/cagep-001) (Team)
-- [All Contributors](https://github.com/rafaeldms/cookie/contributors) (This Rock)
+- [All Contributors](https://github.com/rafaeldms/cookie/contributors)
 
 ## License
 
