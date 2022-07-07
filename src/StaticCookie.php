@@ -26,7 +26,7 @@ class StaticCookie
         } else {
             $value = $encrypt ? self::encrypt($value) : $value;
         }
-        return self::setCookie($name, $value, self::expire($minutes), $path);
+        return self::setCookie($name, $value, self::expire($minutes), $path, $path, $encrypt);
     }
 
     /**
@@ -141,10 +141,10 @@ class StaticCookie
         ?string $value,
         int $expire,
         ?string $path,
-        ?string $domain,
-        bool $secure
+        ?string $domain = "",
+        bool $secure = false
     ): bool {
-        return setCookie($name, $value, $expire, ($path ?? "/"), ($domain ?? ""), ($secure ?? false));
+        return setCookie($name, $value, $expire, ($path ?? "/"), ($domain ?? ""), $secure);
     }
 
     /**

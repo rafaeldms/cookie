@@ -192,7 +192,7 @@ final class Cookie
      */
     public function save(): bool
     {
-        return StaticCookie::setCookie($this->name, $this->value, $this->expiryTime, $this->path, $this->domain,
+        return StaticCookie::set($this->name, $this->value, $this->expiryTime, $this->path, $this->domain,
             $this->secureOnly);
     }
 
@@ -239,7 +239,7 @@ final class Cookie
      */
     public function hasCookie(): bool
     {
-        if(StaticCookie::has($this->name, $this->value)){
+        if (StaticCookie::has($this->name, $this->value)) {
             return true;
         }
         return false;
