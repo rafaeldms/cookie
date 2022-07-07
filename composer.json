@@ -1,0 +1,28 @@
+{
+  "name": "rafaeldms/cookie",
+  "description": "A simple component way to work with Cookies",
+  "keywords": ["rafaeldms", "cookie", "component", "https", "http", "csrf", "xss", "samesite"],
+  "homepage": "https://www.cagep.com.br",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Rafael Damasceno Ferreira",
+      "email": "rafael@cagep.com.br",
+      "homepage": "https://www.cagep.com.br/profissional/rafael-damasceno-ferreira",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "ext-json": "*",
+    "ext-phar": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "8.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "RafaelDms\\Cookie\\": "src"
+    }
+  }
+}
