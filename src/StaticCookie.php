@@ -31,6 +31,26 @@ class StaticCookie
 
     /**
      * @param string $name
+     * @param bool $decrypt
+     * @return mixed|string|null
+     */
+    public static function get(string $name, bool $decrypt = true): mixed
+    {
+        if (self::has($name)) {
+            $cookie = ($decrypt ? self::decrypt(self::getCookie($name)) : self::getCookie($name));
+            if ($cookie) {
+                if ($decode = json_decode($cookie, true)) {
+                    return $decode;
+                }
+                return $cookie;
+            }
+            return null;
+        }
+        return null;
+    }
+
+    /**
+     * @param string $name
      * @param string|null $value
      * @param string|null $path
      * @return bool
@@ -85,26 +105,6 @@ class StaticCookie
 
     /**
      * @param string $name
-     * @param bool $decrypt
-     * @return mixed|string|null
-     */
-    public static function get(string $name, bool $decrypt = true): mixed
-    {
-        if (self::has($name)) {
-            $cookie = ($decrypt ? self::decrypt(self::getCookie($name)) : self::getCookie($name));
-            if ($cookie) {
-                if ($decode = json_decode($cookie, true)) {
-                    return $decode;
-                }
-                return $cookie;
-            }
-            return null;
-        }
-        return null;
-    }
-
-    /**
-     * @param string $name
      * @param mixed $value
      * @param int $minutes
      * @param string|null $path
@@ -136,22 +136,22 @@ class StaticCookie
      * @param bool $secure
      * @return bool
      */
-    public static function setCookie(
+    private static function setCookie(
         string $name,
         ?string $value,
         int $expire,
         ?string $path,
-        ?string $domain = "",
-        bool $secure = false
+        ?string $domain,
+        bool $secure
     ): bool {
-        return setCookie($name, $value, $expire, ($path ?? "/"), ($domain ?? ""), $secure);
+        return setCookie($name, $value, $expire, ($path ?? "/"), ($domain ?? ""), ($secure ?? false));
     }
 
     /**
      * @param string $name
      * @return mixed
      */
-    public static function getCookie(string $name): mixed
+    private static function getCookie(string $name): mixed
     {
         return filter_input(INPUT_COOKIE, $name, FILTER_DEFAULT);
     }
@@ -160,7 +160,7 @@ class StaticCookie
      * @param int $minutes
      * @return int
      */
-    public static function expire(int $minutes): int
+    private static function expire(int $minutes): int
     {
         return time() + (60 * $minutes);
     }
@@ -169,7 +169,7 @@ class StaticCookie
      * @param string $value
      * @return string
      */
-    public static function encrypt(string $value): string
+    private static function encrypt(string $value): string
     {
         return base64_encode($value);
     }
@@ -178,7 +178,7 @@ class StaticCookie
      * @param string $value
      * @return string
      */
-    public static function decrypt(string $value): string
+    private static function decrypt(string $value): string
     {
         return base64_decode($value);
     }
