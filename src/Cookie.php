@@ -1,6 +1,6 @@
 <?php
 
-namespace rafaeldms\Cookie;
+namespace RafaelDms\Cookie;
 
 /**
  *
@@ -28,6 +28,9 @@ final class Cookie
     /** @var bool indicates that the cookie should be sent back by the client over secure HTTPS connections only */
     private bool $secureOnly;
 
+    /** @var bool indicates that the cookie encrypt this value */
+    private bool $encrypt;
+
     /**
      * Prepares a new cookie
      *
@@ -42,6 +45,7 @@ final class Cookie
         $this->domain = null;
         $this->httpOnly = true;
         $this->secureOnly = false;
+        $this->encrypt = true;
     }
 
     /**
@@ -73,6 +77,24 @@ final class Cookie
     public function setValue(mixed $value): Cookie
     {
         $this->value = $value;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEncrypt(): bool
+    {
+        return $this->encrypt;
+    }
+
+    /**
+     * @param bool $encrypt
+     * @return Cookie
+     */
+    public function setEncrypt(bool $encrypt): Cookie
+    {
+        $this->encrypt = $encrypt;
         return $this;
     }
 
@@ -192,8 +214,7 @@ final class Cookie
      */
     public function save(): bool
     {
-        return StaticCookie::set($this->name, $this->value, $this->expiryTime, $this->path, $this->domain,
-            $this->secureOnly);
+        return StaticCookie::set($this->name, $this->value, $this->expiryTime, $this->path, $this->domain, $this->secureOnly, $this->encrypt);
     }
 
     /**

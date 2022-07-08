@@ -9,6 +9,8 @@ class StaticCookie
      * @param mixed $value
      * @param int $minutes
      * @param string|null $path
+     * @param string|null $domain
+     * @param bool $secureOnly
      * @param bool $encrypt
      * @return bool
      */
@@ -16,8 +18,10 @@ class StaticCookie
         string $name,
         mixed $value,
         int $minutes,
+        bool $secureOnly,
+        bool $encrypt = true,
         ?string $path = null,
-        bool $encrypt = true
+        ?string $domain = ""
     ): bool {
         //check if the cookie value is an array to save in json
         if (is_array($value)) {
@@ -26,7 +30,7 @@ class StaticCookie
         } else {
             $value = $encrypt ? self::encrypt($value) : $value;
         }
-        return self::setCookie($name, $value, self::expire($minutes), $path, $path, $encrypt);
+        return self::setCookie($name, $value, self::expire($minutes), $path, $path, $domain, $secureOnly);
     }
 
     /**
@@ -142,7 +146,7 @@ class StaticCookie
         int $expire,
         ?string $path,
         ?string $domain = "",
-        bool $secure = false
+        bool $secure = true
     ): bool {
         return setCookie($name, $value, $expire, ($path ?? "/"), ($domain ?? ""), $secure);
     }
