@@ -1,6 +1,6 @@
 # Cookie @RafaelDms
 
-[![Maintainer](http://img.shields.io/badge/maintainer-@rafaeldms86-blue.svg?style=flat-square)](https://twitter.com/rafaeldms86)
+[![Maintainer](http://img.shields.io/badge/maintainer-@rafaeldms-blue.svg?style=flat-square)](https://instagram.com/rafaeldamasceno86)
 [![Source Code](http://img.shields.io/badge/source-rafaeldms/rafaeldms-blue.svg?style=flat-square)](https://github.com/rafaeldms/cookie)
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/rafaeldms/cookie.svg?style=flat-square)](https://packagist.org/packages/rafaeldms/cookie)
 [![Latest Version](https://img.shields.io/github/release/rafaeldms/cookie.svg?style=flat-square)](https://github.com/rafaeldms/cookie/releases)
