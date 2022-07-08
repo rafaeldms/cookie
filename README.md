@@ -43,7 +43,7 @@ Para mais detalhes sobre como usar o Cookie, veja a pasta de exemplo com detalhe
 
 ###### To start using the Cookie you can Instantiate a new Class or use it in an abstract way
 
-Para começar a usar o Cookie pode Instanciar uma nova Classe ou utilizá-lo de forma abstrata
+Para começar a usar o Cookie pode Instanciar uma nova Classe ou utilizando métodos estáticos
 
 #### Create Cookie using static methods (Criando cookies usando o método estático)
 
