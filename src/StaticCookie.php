@@ -2,6 +2,10 @@
 
 namespace RafaelDms\Cookie;
 
+/**
+ * Class StaticCokie
+ * @package RafaelDms\Cookie
+ */
 class StaticCookie
 {
     /**

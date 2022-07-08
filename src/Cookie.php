@@ -3,7 +3,8 @@
 namespace RafaelDms\Cookie;
 
 /**
- *
+ * Class Cookie
+ * @package RafaelDms\Cookie
  */
 final class Cookie
 {
