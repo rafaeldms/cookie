@@ -22,7 +22,7 @@ class StaticCookie
         string $name,
         mixed $value,
         int $minutes,
-        bool $secureOnly,
+        bool $secureOnly = true,
         bool $encrypt = true,
         ?string $path = null,
         ?string $domain = ""
