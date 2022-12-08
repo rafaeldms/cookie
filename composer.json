@@ -1,7 +1,7 @@
 {
   "name": "rafaeldms/cookie",
   "description": "A simple component way to work with Cookies",
-  "keywords": ["rafaeldms", "cookie", "component", "https", "http", "csrf", "xss", "samesite"],
+  "keywords": ["rafaeldms", "component", "https", "http", "csrf", "xss", "samesite"],
   "homepage": "https://www.cagep.com.br",
   "license": "MIT",
   "authors": [
