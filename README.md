@@ -25,7 +25,7 @@ O Cookie é um componente para criação de Cookies nos navegadores tendo a poss
 Cookie is available via Composer:
 
 ```bash
-"rafaeldms/cookie": "^1.0.*"
+"rafaeldms/cookie": "^1.*"
 ```
 
 or run
