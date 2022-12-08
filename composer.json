@@ -4,7 +4,6 @@
   "keywords": ["rafaeldms", "cookie", "component", "https", "http", "csrf", "xss", "samesite"],
   "homepage": "https://www.cagep.com.br",
   "license": "MIT",
-  "version": "1.1.0",
   "authors": [
     {
       "name": "Rafael Damasceno Ferreira",
